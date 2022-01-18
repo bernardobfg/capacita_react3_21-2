@@ -38,7 +38,7 @@ export const Products = () => {
           <div key={product.id} className="product">
             <h2>{product.name}</h2>
             <img src={product.image} alt={product.name} />
-            <Link to="/detalhes-produto" state={product}>
+            <Link to={`/detalhes-produto/${product.id}`} state={product}>
               Ver detalhes
             </Link>
             <p>{product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>

@@ -1,9 +1,17 @@
-import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import { Header } from "../../components/Header";
 import "./styles.css"
 export const ProductDetail = () => {
   const location = useLocation()
   const product = location.state
+  const {id} = useParams()
+
+  useEffect(() => {
+    //get data from api
+    console.log(id)
+  },[id])
+
   return (
     <div>
       <Header />
