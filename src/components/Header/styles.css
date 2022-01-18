@@ -8,7 +8,8 @@ header{
   color:beige;
   padding: 20px 30px;
 }
-h1{
+#title{
+  font-size: 36px;
   color:aquamarine;
 }
 

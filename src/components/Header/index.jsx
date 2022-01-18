@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 
 
 import './styles.css';
@@ -14,12 +15,17 @@ export const Header = ()  => {
     {
       name: 'Produtos',
       path: '/produtos'
+    },
+    {
+      name: 'Carrinho',
+      path: '/carrinho'
     }
   ]
-
+  const { cart } = useCart();
+  console.log(cart)
   return (
     <header>
-      <h1>Magalí</h1>
+      <h1 id="title">Magalí</h1>
       <nav>
         <ul>
           {items.map((item,index) => (
@@ -27,6 +33,9 @@ export const Header = ()  => {
               <Link to={item.path}>{item.name}</Link>
             </li>
           ))}
+          <li>{
+            cart.reduce((acc, item) => acc + item.amount, 0)
+          }</li>
 
         </ul>
       </nav>
