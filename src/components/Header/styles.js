@@ -6,8 +6,8 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  background-color: ${props => props.theme.colors.black};
-  color:beige;
+  background-color: ${props => props.theme.colors.primary};
+  color:${props => props.theme.colors.headerText};
   padding: 20px 30px;
 `
 export const Title = styled.h1`
@@ -31,7 +31,7 @@ export const Menu = styled.ul`
 
   a{
     text-decoration: none;
-    color: beige;
+    color: ${props => props.theme.colors.headerText};
     transition: filter .2s;
   }
   a:hover{

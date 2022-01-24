@@ -7,6 +7,10 @@ export const ProductList = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
 `
 
 export const Product = styled.div`
@@ -18,7 +22,7 @@ export const Product = styled.div`
   height: 350px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px ${props => props.theme.colors.black};
+  box-shadow: 0px 0px 10px ${props => props.theme.colors.text};
   padding: 20px;
   margin: 20px;
 
@@ -28,7 +32,7 @@ export const Product = styled.div`
   }
   a{
     text-decoration: none;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.text};
     margin: 10px 0;
   }
 

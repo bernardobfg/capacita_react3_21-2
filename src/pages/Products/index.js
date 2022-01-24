@@ -13,19 +13,19 @@ export const Products = () => {
     {
       id: 2,
       name: "Product 2",
-      price: 1000,
+      price: 2000,
       image: "https://picsum.photos/id/2/200/300"
     },
     {
       id: 3,
       name: "Product 3",
-      price: 1000,
+      price: 3000,
       image: "https://picsum.photos/id/3/200/300"
     },
     {
       id: 4,
       name: "Product 4",
-      price: 1000,
+      price: 4000,
       image: "https://picsum.photos/id/4/200/300"
     },
   ]

@@ -17,8 +17,13 @@ export const Content = styled.header`
 export const AddButton = styled.button`
   width: 200px;
   height: 50px;
-  background-color: ${props => props.theme.colors.pink};
+  background-color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.headerText};
   border: 0;
   border-radius: 5px;
   cursor: pointer;
+  transition: filter .2s;
+  &:hover{
+    filter: brightness(1.1);
+  }
 `
