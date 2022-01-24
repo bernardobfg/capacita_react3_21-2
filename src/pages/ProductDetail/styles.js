@@ -11,6 +11,7 @@ export const Content = styled.header`
   img{
     width: 500px;
     height: 300px;
+    max-width: 95vw;
   }
 `
 

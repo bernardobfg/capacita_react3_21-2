@@ -15,6 +15,7 @@ export const CartItem = styled.div`
   justify-content:space-between;
   align-items:center;
   width: 600px;
+  max-width: 95vw;
   height: 50px;
 
   p strong{
@@ -25,6 +26,12 @@ export const CartItem = styled.div`
     border-top: 1px solid ${props => props.theme.black};
     margin-top: 10px;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    }
 `
 
 
