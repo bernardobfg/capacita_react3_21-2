@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { useCart } from "../../hooks/useCart";
-import "./styles.css"
+import { AddButton, Content } from "./styles";
 export const ProductDetail = () => {
   const location = useLocation()
   const { id } = useParams()
@@ -17,18 +17,18 @@ export const ProductDetail = () => {
     handleChange(product, 1)
   }
   const handleNavigate =() =>{
-    navigate("/carrinho")
+    navigate(-1)
   }
   return (
     <div>
       <Header />
       <button onClick={handleNavigate}>Voltar</button>
-      <div className="content">
+      <Content>
         <h2>{product.name}</h2>
         <img src={product.image} alt="product" />
         <p>{product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-        <button onClick={handleAddToCart} className="addButton">Comprar</button>
-      </div>
+        <AddButton onClick={handleAddToCart}>Comprar</AddButton>
+      </Content>
     </div>
   );
 }

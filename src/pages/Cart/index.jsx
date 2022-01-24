@@ -1,17 +1,17 @@
 import { Header } from "../../components/Header";
 import { useCart } from "../../hooks/useCart"
-import "./styles.css"
+import { CartItem, Content } from "./styles";
 export const Cart = () => {
   const { cart, handleChange } = useCart()
   return (
     <div>
       <Header />
       <h2>Carrinho</h2>
-      <div className="content">
+      <Content>
         {
           cart.map((item) => {
             return (
-              <div key={item.id} className="cartItem">
+              <CartItem key={item.id}>
                 <h3>{item.name}</h3>
                 <p>Quantidade: <strong>{item.amount}</strong></p>
                 <p>Total: <strong>{(item.price * item.amount).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</strong></p>
@@ -29,7 +29,7 @@ export const Cart = () => {
                     -
                   </button>
                 </div>
-              </div>
+              </CartItem>
             )
           })
         }
@@ -37,11 +37,11 @@ export const Cart = () => {
           Total:
           <span>
             {
-              cart.reduce((acc, item) => acc + item.amount *item.price, 0)
+              cart.reduce((acc, item) => acc + item.amount *item.price, 0).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
             }
           </span>
         </h3>
-      </div>
+      </Content>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Header } from "../../components/Header"
-import "./styles.css"
+import { Product, ProductList } from "./styles"
 export const Products = () => {
 
   const products = [
@@ -33,17 +33,17 @@ export const Products = () => {
   return (
     <div>
       <Header />
-      <div className="products">
+      <ProductList>
         {products.map(product => (
-          <div key={product.id} className="product">
+          <Product key={product.id}>
             <h2>{product.name}</h2>
             <img src={product.image} alt={product.name} />
             <Link to={`/detalhes-produto/${product.id}`} state={product}>
               Ver detalhes
             </Link>
             <p>{product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-          </div>))}
-      </div>
+          </Product>))}
+      </ProductList>
     </div>
   )
 }
