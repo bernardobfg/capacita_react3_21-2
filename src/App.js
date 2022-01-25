@@ -8,8 +8,9 @@ function App() {
     <ContextProvider>
       <ThemeProvider theme={theme}>
         <AppRoutes/>
+        <GlobalStyle/>
       </ThemeProvider>
-      <GlobalStyle/>
+      
     </ContextProvider>
     );
 }
